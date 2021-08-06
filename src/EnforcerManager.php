@@ -35,10 +35,7 @@ class EnforcerManager
      */
     private $config;
 
-    /**
-     * @var Enforcer
-     */
-    private $enforcer;
+    private $instance;
 
     /**
      * EnforcerManager constructor.
@@ -50,25 +47,26 @@ class EnforcerManager
     {
         $this->container = $container;
         $this->config = $config;
-
-        $this->enforcer = $this->resolveEnforcer();
     }
 
     public function __call($name, $arguments)
     {
+        $enforcer = $this->resolveEnforcer();
         // reload policy.
-        $this->enforcer->loadPolicy();
+        $enforcer->loadPolicy();
 
-        return $this->enforcer->{$name}(...$arguments);
+        return $enforcer->{$name}(...$arguments);
     }
 
     private function resolveEnforcer()
     {
-        return new Enforcer(
-            $this->resolveModel(),
-            $this->resolveAdapter(),
-            $this->enableLog()
-        );
+        if (isset($this->instance)) {
+            return $this->instance;
+        }
+
+        $this->instance = new Enforcer($this->resolveModel(), $this->resolveAdapter(), $this->enableLog());
+
+        return $this->instance;
     }
 
     private function resolveModel(): Model
