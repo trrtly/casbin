@@ -13,7 +13,7 @@ use Trrtly\Casbin\Model\Rule;
  */
 class CacheClear extends Command
 {
-    protected $name = 'casbin:cache-clear';
+    protected ?string $name = 'casbin:cache-clear';
 
     public function __construct()
     {
