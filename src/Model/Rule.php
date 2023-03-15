@@ -14,7 +14,6 @@ namespace Trrtly\Casbin\Model;
 use Hyperf\Contract\ConfigInterface;
 use Hyperf\DbConnection\Model\Model;
 use Hyperf\Utils\ApplicationContext;
-use Psr\SimpleCache\CacheInterface;
 
 /**
  * @property int $id
@@ -35,7 +34,7 @@ class Rule extends Model
      *
      * @var array
      */
-    protected $fillable = ['ptype', 'v0', 'v1', 'v2', 'v3', 'v4', 'v5'];
+    protected array $fillable = ['ptype', 'v0', 'v1', 'v2', 'v3', 'v4', 'v5'];
 
     /**
      * @var ConfigInterface

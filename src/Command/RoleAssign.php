@@ -25,7 +25,7 @@ class RoleAssign extends Command
      *
      * @var string
      */
-    protected $name = 'role:assign';
+    protected ?string $name = 'role:assign';
 
     public function configure()
     {

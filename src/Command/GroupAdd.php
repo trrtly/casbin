@@ -18,7 +18,7 @@ class GroupAdd extends Command
      *
      * @var string
      */
-    protected $name = 'group:add';
+    protected ?string $name = 'group:add';
 
     public function configure()
     {

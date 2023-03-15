@@ -25,7 +25,7 @@ class PolicyAdd extends Command
      *
      * @var string
      */
-    protected $name = 'policy:add';
+    protected ?string $name = 'policy:add';
 
     public function configure()
     {
