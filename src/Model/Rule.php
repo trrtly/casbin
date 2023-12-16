@@ -13,7 +13,7 @@ namespace Trrtly\Casbin\Model;
 
 use Hyperf\Contract\ConfigInterface;
 use Hyperf\DbConnection\Model\Model;
-use Hyperf\Utils\ApplicationContext;
+use Hyperf\Context\ApplicationContext;
 
 /**
  * @property int $id

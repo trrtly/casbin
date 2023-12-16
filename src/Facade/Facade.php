@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Trrtly\Casbin\Facade;
 
-use Hyperf\Utils\ApplicationContext;
+use Hyperf\Context\ApplicationContext;
 
 abstract class Facade
 {

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Trrtly\Casbin\Command;
 
 use Hyperf\Command\Command;
-use Hyperf\Utils\ApplicationContext;
+use Hyperf\Context\ApplicationContext;
 use Trrtly\Casbin\Model\Rule;
 
 /**
